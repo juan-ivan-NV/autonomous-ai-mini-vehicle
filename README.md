@@ -5,9 +5,11 @@ The current project is in the researching stage...
 ## Materials
 
 1.- Powertrain (chassis): RC car.
-2.- Brain: Nvidia Jetson Nano.
+2.- Brain: Nvidia Jetson TK1.
+2.1- Hub USB.
 3.- Batteries:
-4.- Camera:
+4.- Camera: Xbox Kinect 2.0
+4.1- USB converter adapter.
 5.- Memory card:
 6.- Surface:
 
