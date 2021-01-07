@@ -18,3 +18,9 @@ Resources:
 
 A good presentation to understand how does it work.
 https://roscon.ros.org/2019/talks/roscon2019_f110th.pdf
+
+## Stage 1 ► working on Jetson TK1
+
+Getting started with NVIDIA Jetson TK1 ► https://developer.download.nvidia.com/embedded/jetson/TK1/docs/2_GetStart/Jeston_TK1_User_Guide.pdf
+Jetson TK1 Development Pack 1.2 ► https://developer.nvidia.com/jetson-tk1-development-pack-1_2
+
