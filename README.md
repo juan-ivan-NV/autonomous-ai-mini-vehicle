@@ -28,9 +28,14 @@ After making many tests, Jetson TK1 will not be the board for this project becau
 
 Working local with ROS following this tutorial to install: https://www.stereolabs.com/blog/ros-and-nvidia-jetson-xavier-nx/
 
-## Stage 1 ► working local
+## Stage 1 ► working local windows
 libraries
 1.- libfreenect https://github.com/OpenKinect/libfreenect2
+* UsbDk
+* libusb
+* TurboJPEG
+* GLFW
+* 
 2.- 
 
 
