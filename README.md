@@ -36,6 +36,7 @@ libraries
 * TurboJPEG
 * GLFW
 * 
-2.- 
+To install libfreenect2 one option is install it with vcpkg: https://github.com/microsoft/vcpkg
+
 
 
