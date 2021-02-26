@@ -31,12 +31,10 @@ Working local with ROS following this tutorial to install: https://www.stereolab
 ## Stage 1 ► working local windows
 libraries
 1.- libfreenect https://github.com/OpenKinect/libfreenect2
-* UsbDk
-* libusb
-* TurboJPEG
-* GLFW
-* 
+
 To install libfreenect2 one option is install it with vcpkg: https://github.com/microsoft/vcpkg
+"vcpkg search" or "vcpkg list" to see all packages supported.
+Before install vcpkg, for visual studio should be installed "Desktop Development With C++" and languaje should be set to "English"
 
 
 
