@@ -36,5 +36,9 @@ To install libfreenect2 one option is install it with vcpkg: https://github.com/
 "vcpkg search" or "vcpkg list" to see all packages supported.
 Before install vcpkg, for visual studio should be installed "Desktop Development With C++" and languaje should be set to "English"
 
+It seems fine once you get "Installing package libfreenect2[core,opengl]:x86-windows... done".
+
+Testing the frame with ktb.
+
 
 
