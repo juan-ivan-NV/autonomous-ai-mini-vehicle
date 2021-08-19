@@ -28,17 +28,10 @@ After making many tests, Jetson TK1 will not be the board for this project becau
 
 Working local with ROS following this tutorial to install: https://www.stereolabs.com/blog/ros-and-nvidia-jetson-xavier-nx/
 
-## Stage 1 ► working local windows
-libraries
-1.- libfreenect https://github.com/OpenKinect/libfreenect2
+## Stage 1 ► working local on ubuntu 20.04
 
-To install libfreenect2 one option is install it with vcpkg: https://github.com/microsoft/vcpkg
-"vcpkg search" or "vcpkg list" to see all packages supported.
-Before install vcpkg, for visual studio should be installed "Desktop Development With C++" and languaje should be set to "English"
+Tutorial to install libfreenect2 
 
-It seems fine once you get "Installing package libfreenect2[core,opengl]:x86-windows... done".
-
-Testing the frame with ktb.
-
+<a href = "https://www.notaboutmy.life/posts/run-kinect-2-on-ubuntu-20-lts/">Tutorial to install libfreenect2 </a>
 
 
