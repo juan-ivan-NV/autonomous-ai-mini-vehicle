@@ -35,3 +35,4 @@ Tutorial to install libfreenect2
 <a href = "https://www.notaboutmy.life/posts/run-kinect-2-on-ubuntu-20-lts/">Tutorial to install libfreenect2 </a>
 
 
+(source .venv/bin/activate)
