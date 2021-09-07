@@ -36,3 +36,9 @@ Tutorial to install libfreenect2
 
 
 (source .venv/bin/activate)
+
+(A lot of issues due dependencies and libraries "Matrix hell")
+
+### Trying libfreenect2 on Docker
+
+* Install docker (working on ubuntu 20.04)
