@@ -37,7 +37,7 @@ Tutorial to install libfreenect2
 
 (source .venv/bin/activate)
 
-(A lot of issues due dependencies and libraries "Matrix hell")
+(A lot of issues due dependencies and libraries "Hell Matrix")
 
 ### Trying libfreenect2 on Docker
 
