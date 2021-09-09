@@ -42,3 +42,9 @@ Tutorial to install libfreenect2
 ### Trying libfreenect2 on Docker
 
 * Install docker (working on ubuntu 20.04)
+
+Learning python and docker 
+
+https://www.youtube.com/watch?v=ZtHaaWvuZVg
+
+docker run -p 8888:8888 -v ${PWD}/workspace/ipynbs:/ipynbs jupyter jupyter notebook --allow-root --no-browser --ip=0.0.0.0
