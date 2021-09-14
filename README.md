@@ -41,7 +41,10 @@ Tutorial to install libfreenect2
 
 ### Trying libfreenect2 on Docker
 
+https://hub.docker.com/r/nucleardreamer/libfreenect2
+
 * Install docker (working on ubuntu 20.04)
+
 
 Learning python and docker 
 
