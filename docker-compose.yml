@@ -1,12 +1,15 @@
-version: "3.0"
+version: "2.3"
 
-services: 
-  jupyter:
-    container_name: jupyter
-    image:  jupyter
-    build: .
-    ports: 
+services:
+  pytorch-ngc:
+    runtime: nvidia
+    container_name: libfreenect2
+    image: nucleardreamer/libfreenect2 .
+    ipc: host
+    ports:
       - 8888:8888
     volumes:
-      - ./ipynbs:/workspace/ipynbs
-    command: jupyter notebook --allow-root --ip=0.0.0.0 --no-browser
+      - ./ipynbs:/workspace
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=all
+    command: jupyter notebook --allow-root --ip=0.0.0.0 --no-browser --NotebookApp.token=abc1230.0.0 --no-browser --NotebookApp.token=abc123
