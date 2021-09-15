@@ -51,3 +51,6 @@ Learning python and docker
 https://www.youtube.com/watch?v=ZtHaaWvuZVg
 
 docker run -p 8888:8888 -v ${PWD}/workspace/ipynbs:/ipynbs jupyter jupyter notebook --allow-root --no-browser --ip=0.0.0.0
+
+
+<a href = "https://ngc.nvidia.com/catalog/containers?orderBy=modifiedDESC&pageNumber=1&query=&quickFilter=&filters=">nvidia containers </a>
