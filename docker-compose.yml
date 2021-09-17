@@ -1,15 +1,23 @@
-version: "2.3"
-
+version: '2'
 services:
-  pytorch-ngc:
-    runtime: nvidia
-    container_name: libfreenect2
-    image: nucleardreamer/libfreenect2 .
-    ipc: host
-    ports:
-      - 8888:8888
-    volumes:
-      - ./ipynbs:/workspace
+  kinect2:
+    image: kinect2:latest
+    depends_on:
+      - ros-base
     environment:
-      - NVIDIA_VISIBLE_DEVICES=all
-    command: jupyter notebook --allow-root --ip=0.0.0.0 --no-browser --NotebookApp.token=abc1230.0.0 --no-browser --NotebookApp.token=abc123
+      ROS_IP: $ROS_IP
+      ROS_MASTER_URI: $ROS_MASTER_URI
+      DISPLAY: :0
+      QT_X11_NO_MITSHM: '1'
+    stdin_open: true
+    network_mode: host
+    volumes:
+      - $HOME/exchange:/root/exchange
+      - /tmp/.X11-unix:/tmp/.X11-unix
+      - $HOME/.Xauthority:/root/.Xauthority
+      - /etc/localtime:/etc/localtime:ro
+    privileged: true
+    devices:
+      - /dev/bus/usb:/dev/bus/usb
+    tty: true
+    command: tail -f /dev/null
