@@ -1,47 +1,66 @@
-ARG DOCKER_BASE_IMAGE=ros-docker-base
-FROM $DOCKER_BASE_IMAGE
-ARG ROS_DISTRO=kinetic
-ARG ENABLE_NVIDIA=true
+FROM tccoin/docker-ros
 
-RUN apt-get install -y software-properties-common && \
-    if [ "$ENABLE_NVIDIA" = "true" ] ; then add-apt-repository ppa:graphics-drivers ; fi && \
-    if [ "$ENABLE_NVIDIA" = "true" ] ; then apt-get update ; fi && \
-    if [ "$ENABLE_NVIDIA" = "true" ] ; then apt-get install -y nvidia-384 ; fi && \
-    if [ "$ENABLE_NVIDIA" != "true" ] ; then echo nvidia Disabled; fi
+ENV ROS_DISTRO noetic
 
-RUN cd /root && \
-    git clone https://github.com/OpenKinect/libfreenect2.git && \
-    cd libfreenect2 && \
-    apt-get update && \
-    apt-get install -y build-essential software-properties-common cmake pkg-config \
-      libusb-1.0-0-dev libturbojpeg libjpeg-turbo8-dev \ 
-      libglfw3-dev libopenni2-dev \
-    # for intel gpu
-    beignet-dev libva-dev libjpeg-dev && \
-   
-    mkdir build && cd build && \
-    cmake .. -DCMAKE_INSTALL_PREFIX=$HOME/freenect2 -Dfreenect2_DIR=$HOME/freenect2/lib/cmake/freenect2 -DENABLE_CXX11=ON && \
-    make -j3 && \
-    make install
+WORKDIR /root/ws
 
-RUN apt-get -y install openni2-utils && \
-    cd /root/libfreenect2/build && \
-    make install-openni2 
+RUN echo "deb http://packages.ros.org/ros/ubuntu trusty main" > /etc/apt/sources.list.d/ros-latest.list
+RUN apt-key adv --keyserver "hkp://ha.pool.sks-keyservers.net" --recv-key "0xB01FA116" \
+    || { wget "https://raw.githubusercontent.com/ros/rosdistro/master/ros.key" -O - | sudo apt-key add -; }
+RUN sh -c 'echo "deb http://packages.ros.org/ros/ubuntu `lsb_release -cs` main" > /etc/apt/sources.list.d/ros-latest.list' \ 
+    && apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654
 
-RUN add-apt-repository ppa:floe/beignet && apt-get update;exit 0 && \ 
-RUN apt-get -y install beignet opencl-headers
+RUN sed -i "/^# deb.*multiverse/ s/^# //" /etc/apt/sources.list \ 
+    && apt-get update \ 
+    && apt-get install --no-install-recommends -y \
+    apt-utils \
+    wget \
+    ca-certificates \
+    git \
+    sudo \
+    ros-${ROS_DISTRO}-ros-base \
+    ros-${ROS_DISTRO}-catkin \
+    build-essential \
+    python3-colcon-common-extensions \
+    python3-catkin-tools \
+    python3-osrf-pycommon \
+    python3-rosdep \
+    python3-wstool \
+    ros-${ROS_DISTRO}-catkin \
+    beignet-dev \
+    libusb-1.0.0-dev \
+    libturbojpeg \
+    libturbojpeg0-dev \
+    libjpeg-turbo8-dev \
+    libglfw3-dev \
+    libopenni2-dev \
+    opencl-headers \
+    openni2-utils \
+    pkg-config \
+    udev
 
+RUN mkdir src \ 
+    && cd src \ 
+    && git clone https://github.com/TheEngineRoom-UniGe/iai_kinect2.git
 
-RUN cd /root/catkin_ws/src/ && \
-    git clone https://github.com/code-iai/iai_kinect2.git && \
-    cd iai_kinect2 && \
-    rosdep install -y -r --from-paths .
-RUN cd /root/catkin_ws && \
-    source devel/setup.bash && \
-    catkin_make -DCMAKE_BUILD_TYPE="Release"
+RUN rosdep update \ 
+    && rosdep install -y \
+    --from-paths src \
+    --ignore-src \
+    --as-root=apt:false
 
-RUN echo "source /root/catkin_ws/devel/setup.bash" >> ~/.bashrc && \ 
-    echo "export PS1='🐳 \e[1;32mkinect2\e[m\e[1;39m@\e[m\[\e[1;36m\]\h \[\e[1;34m\]\W\[\e[0;35m\] \[\e[1;36m\]# \[\e[0m\]'" >> ~/.bashrc && \
-    cp ~/.bashrc ~/.bashrcLocal && \
-    echo "export ROS_MASTER_URI='http://172.16.17.115:11311'" >> ~/.bashrc && \
-    echo "export ROS_MASTER_URI='localhost:11311'" >> ~/.bashrcLocal
+RUN git clone https://github.com/OpenKinect/libfreenect2.git \
+    && cd libfreenect2 \
+    && mkdir build && cd build \
+    && cmake .. -DBUILD_OPENNI2_DRIVER=ON -DCMAKE_INSTALL_PREFIX=/root/freenect2 \
+    && make \
+    && make install
+
+RUN cp ./libfreenect2/platform/linux/udev/90-kinect2.rules /etc/udev/rules.d/ \
+    && ldconfig /root/freenect2 \
+    && ln -s /libfreenect2/build/bin/Protonect /usr/local/bin/kinect_test \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+RUN . /opt/ros/$ROS_DISTRO/setup.sh \ 
+    && colcon build
