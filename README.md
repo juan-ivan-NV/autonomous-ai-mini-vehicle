@@ -54,3 +54,12 @@ docker run -p 8888:8888 -v ${PWD}/workspace/ipynbs:/ipynbs jupyter jupyter noteb
 
 
 <a href = "https://ngc.nvidia.com/catalog/containers?orderBy=modifiedDESC&pageNumber=1&query=&quickFilter=&filters=">nvidia containers </a>
+
+
+# ROS on Docker
+
+<a href = "https://hub.docker.com/_/ros">ROS-Docker </a>
+
+<a href = "https://en.wikipedia.org/wiki/Robot_Operating_System">Robot Operating System </a>
+
+Folder "ros-demos" for testing ROS on docker
