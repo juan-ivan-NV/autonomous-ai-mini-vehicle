@@ -1,59 +1,47 @@
-ARG FROM_IMAGE=ros:foxy
-ARG OVERLAY_WS=/opt/ros/overlay_ws
+ARG DOCKER_BASE_IMAGE=ros-docker-base
+FROM $DOCKER_BASE_IMAGE
+ARG ROS_DISTRO=kinetic
+ARG ENABLE_NVIDIA=true
 
-# multi-stage for caching
-FROM $FROM_IMAGE AS cacher
+RUN apt-get install -y software-properties-common && \
+    if [ "$ENABLE_NVIDIA" = "true" ] ; then add-apt-repository ppa:graphics-drivers ; fi && \
+    if [ "$ENABLE_NVIDIA" = "true" ] ; then apt-get update ; fi && \
+    if [ "$ENABLE_NVIDIA" = "true" ] ; then apt-get install -y nvidia-384 ; fi && \
+    if [ "$ENABLE_NVIDIA" != "true" ] ; then echo nvidia Disabled; fi
 
-# clone overlay source
-ARG OVERLAY_WS
-WORKDIR $OVERLAY_WS/src
-RUN echo "\
-repositories: \n\
-  ros2/demos: \n\
-    type: git \n\
-    url: https://github.com/ros2/demos.git \n\
-    version: ${ROS_DISTRO} \n\
-" > ../overlay.repos
-RUN vcs import ./ < ../overlay.repos
+RUN cd /root && \
+    git clone https://github.com/OpenKinect/libfreenect2.git && \
+    cd libfreenect2 && \
+    apt-get update && \
+    apt-get install -y build-essential software-properties-common cmake pkg-config \
+      libusb-1.0-0-dev libturbojpeg libjpeg-turbo8-dev \ 
+      libglfw3-dev libopenni2-dev \
+    # for intel gpu
+    beignet-dev libva-dev libjpeg-dev && \
+   
+    mkdir build && cd build && \
+    cmake .. -DCMAKE_INSTALL_PREFIX=$HOME/freenect2 -Dfreenect2_DIR=$HOME/freenect2/lib/cmake/freenect2 -DENABLE_CXX11=ON && \
+    make -j3 && \
+    make install
 
-# copy manifests for caching
-WORKDIR /opt
-RUN mkdir -p /tmp/opt && \
-    find ./ -name "package.xml" | \
-      xargs cp --parents -t /tmp/opt && \
-    find ./ -name "COLCON_IGNORE" | \
-      xargs cp --parents -t /tmp/opt || true
+RUN apt-get -y install openni2-utils && \
+    cd /root/libfreenect2/build && \
+    make install-openni2 
 
-# multi-stage for building
-FROM $FROM_IMAGE AS builder
+RUN add-apt-repository ppa:floe/beignet && apt-get update;exit 0 && \ 
+RUN apt-get -y install beignet opencl-headers
 
-# install overlay dependencies
-ARG OVERLAY_WS
-WORKDIR $OVERLAY_WS
-COPY --from=cacher /tmp/$OVERLAY_WS/src ./src
-RUN . /opt/ros/$ROS_DISTRO/setup.sh && \
-    apt-get update && rosdep install -y \
-      --from-paths \
-        src/ros2/demos/demo_nodes_cpp \
-        src/ros2/demos/demo_nodes_py \
-      --ignore-src \
-    && rm -rf /var/lib/apt/lists/*
 
-# build overlay source
-COPY --from=cacher $OVERLAY_WS/src ./src
-ARG OVERLAY_MIXINS="release"
-RUN . /opt/ros/$ROS_DISTRO/setup.sh && \
-    colcon build \
-      --packages-select \
-        demo_nodes_cpp \
-        demo_nodes_py \
-      --mixin $OVERLAY_MIXINS
+RUN cd /root/catkin_ws/src/ && \
+    git clone https://github.com/code-iai/iai_kinect2.git && \
+    cd iai_kinect2 && \
+    rosdep install -y -r --from-paths .
+RUN cd /root/catkin_ws && \
+    source devel/setup.bash && \
+    catkin_make -DCMAKE_BUILD_TYPE="Release"
 
-# source entrypoint setup
-ENV OVERLAY_WS $OVERLAY_WS
-RUN sed --in-place --expression \
-      '$isource "$OVERLAY_WS/install/setup.bash"' \
-      /ros_entrypoint.sh
-
-# run launch file
-CMD ["ros2", "launch", "demo_nodes_cpp", "talker_listener.launch.py"]
+RUN echo "source /root/catkin_ws/devel/setup.bash" >> ~/.bashrc && \ 
+    echo "export PS1='🐳 \e[1;32mkinect2\e[m\e[1;39m@\e[m\[\e[1;36m\]\h \[\e[1;34m\]\W\[\e[0;35m\] \[\e[1;36m\]# \[\e[0m\]'" >> ~/.bashrc && \
+    cp ~/.bashrc ~/.bashrcLocal && \
+    echo "export ROS_MASTER_URI='http://172.16.17.115:11311'" >> ~/.bashrc && \
+    echo "export ROS_MASTER_URI='localhost:11311'" >> ~/.bashrcLocal
