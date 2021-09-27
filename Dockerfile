@@ -1,7 +1,8 @@
-#FROM python:3
 FROM nucleardreamer/libfreenect2:0.2.0
+
+RUN apt-get update \
+    && apt-get install -y python-pip 
+
+RUN pip install --upgrade pip && pip install jupyter
+
 WORKDIR /workspace
-#COPY . .
-CMD python3 ./test.py
-RUN test.py
-#ENTRYPOINT ["python3"]
