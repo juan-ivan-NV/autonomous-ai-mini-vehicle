@@ -63,3 +63,19 @@ docker run -p 8888:8888 -v ${PWD}/workspace/ipynbs:/ipynbs jupyter jupyter noteb
 <a href = "https://en.wikipedia.org/wiki/Robot_Operating_System">Robot Operating System </a>
 
 Folder "ros-demos" for testing ROS on docker
+
+
+### Reminder Notes 
+
+
+"""FROM nucleardreamer/libfreenect2:0.2.0
+
+RUN apt-get update && apt-get install -y python-pip 
+
+RUN pip install --upgrade pip && pip install jupyter \
+
+WORKDIR /workspace""" fail...
+
+Avoid sudo $ sudo -i
+
+Delete all <none images> docker images --quiet --filter=dangling=true | xargs --no-run-if-empty docker rmi -f
