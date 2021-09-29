@@ -78,4 +78,4 @@ WORKDIR /workspace""" fail...
 
 Avoid sudo $ sudo -i
 
-Delete all <none images> docker images --quiet --filter=dangling=true | xargs --no-run-if-empty docker rmi -f
+Delete all <none> images ->> docker images --quiet --filter=dangling=true | xargs --no-run-if-empty docker rmi -f
