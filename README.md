@@ -4,15 +4,13 @@ The current project is in the researching stage...
 
 ## Materials
 
-1.- Powertrain (chassis): RC car.
-2.- Brain: Nvidia Jetson TK1.
-2.1- Hub USB.
-3.- Batteries:
-4.- Camera: Xbox Kinect 2.0
-4.1- USB converter adapter.
-5.- Memory card:
-6.- Surface:
+1.- Nvidia Jetson Nano developer board
+2.- Jetson Nano Adapter
+3.- Camera Module
+4.- WiFi Card
+5.- Antenas
 
+6.- Exceed magnet rc car chasis
 
 Resources:
 
@@ -26,9 +24,14 @@ https://roscon.ros.org/2019/talks/roscon2019_f110th.pdf
 
 <a href = "https://docs.donkeycar.com/">Donkey Car Home page </a>
 
-# Failed attemts
+1.- Install Donkeycar on Windows (miniconda)
 
-## Testing TK1
+
+
+# Failed attemts or issues
+
+
+### Testing with a deprecated board (NVIDIA TK1)
 
 <a href = "https://developer.download.nvidia.com/embedded/jetson/TK1/docs/2_GetStart/Jeston_TK1_User_Guide.pdf">Getting started with NVIDIA Jetson TK1 </a>
 
