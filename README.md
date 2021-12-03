@@ -24,7 +24,8 @@ https://roscon.ros.org/2019/talks/roscon2019_f110th.pdf
 
 <a href = "https://docs.donkeycar.com/">Donkey Car Home page </a>
 
-1.- Install Donkeycar on Windows (miniconda)
+1.- Install Donkeycar on Windows or Linux
+2.- Install Donkey Car Simulator
 
 
 
