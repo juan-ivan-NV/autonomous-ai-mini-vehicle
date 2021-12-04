@@ -24,9 +24,11 @@ https://roscon.ros.org/2019/talks/roscon2019_f110th.pdf
 
 <a href = "https://docs.donkeycar.com/">Donkey Car Home page </a>
 
-1.- Install Donkeycar on Windows or Linux
-2.- Install Donkey Car Simulator
+1.- <a href = "https://docs.donkeycar.com/guide/install_software/#step-1-install-software-on-host-pc">Install Donkeycar</a> on Windows or Linux
+    * This can be done step by step
+    * Or with <a href = "https://medium.com/robocar-store/how-to-install-a-virtual-donkey-car-on-your-pc-using-docker-9e4e4fcf718a">docker</a>
 
+2.- Install Donkey Simulator for <a href = "https://youtu.be/J6Ll5Obtuxk">linux</a> or <a href = "https://youtu.be/wqQMmHVT8qw">windows</a>
 
 
 # Failed attemts or issues
