@@ -32,7 +32,7 @@ https://roscon.ros.org/2019/talks/roscon2019_f110th.pdf
 
 2.- Install Donkey Simulator for <a href = "https://youtu.be/J6Ll5Obtuxk">linux</a> or <a href = "https://youtu.be/wqQMmHVT8qw">windows</a>
 
-* To use docker with donkey simulator run the <code>donkey_sim.exe</code> app then access a car container <code>Docker exec -it donkeycar1 bash<code> and finally run manage.py <code>python manage.py drive</code>
+* To use docker with donkey simulator run the <code>donkey_sim.exe</code> app then access a car container <code>Docker exec -it donkeycar1 bash</code> and finally run manage.py <code>python manage.py drive</code>
 
 
 ### Commands
