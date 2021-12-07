@@ -32,8 +32,13 @@ https://roscon.ros.org/2019/talks/roscon2019_f110th.pdf
 
 2.- Install Donkey Simulator for <a href = "https://youtu.be/J6Ll5Obtuxk">linux</a> or <a href = "https://youtu.be/wqQMmHVT8qw">windows</a>
 
-* To use docker with donkey simulator run the <code>donkey_sim.exe</code> app then access a car container <code>Docker exec -it donkeycar1 bash</code> and finally run manage.py <code>python manage.py drive</code>
+* To use docker with donkey simulator run the <code>donkey_sim.exe</code> app then access any car container, for example <code>Docker exec -it donkeycar1 bash</code> and finally run manage.py <code>python manage.py drive</code>
 
+3.- Install Software On Donkeycar in this case the <a href = "https://docs.donkeycar.com/guide/robot_sbc/setup_jetson_nano/">Jetson Nano</a>
+
+## Training methods
+
+* Supervised learning also referred to as behavioral cloning
 
 ### Commands
 
