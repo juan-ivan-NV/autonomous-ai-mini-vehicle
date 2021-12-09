@@ -36,6 +36,8 @@ https://roscon.ros.org/2019/talks/roscon2019_f110th.pdf
 
 3.- Install Software On Donkeycar in this case the <a href = "https://docs.donkeycar.com/guide/robot_sbc/setup_jetson_nano/">Jetson Nano</a>
 
+4.- just clone the repo <a href = "https://github.com/autorope/donkeycar">Donkeycar Python Code</a>
+
 ## Training methods
 
 * Supervised learning also referred to as behavioral cloning
