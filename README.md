@@ -41,6 +41,22 @@ https://roscon.ros.org/2019/talks/roscon2019_f110th.pdf
 
 5.- <a href = "https://docs.donkeycar.com/guide/create_application/">Create your car application</a>
 
+* Steps:
+
+    Configure Options
+
+        donkey createcar --path ~/mycar
+        cd ~/mycar
+        nano myconfig.py
+
+    Configure I2C PCA9685
+
+        sudo usermod -aG i2c $USER
+        sudo reboot
+        sudo i2cdetect -r -y 1
+        
+
+
 ## Training methods
 
 * Supervised learning also referred to as behavioral cloning
