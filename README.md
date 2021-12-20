@@ -55,6 +55,9 @@ https://roscon.ros.org/2019/talks/roscon2019_f110th.pdf
         sudo reboot
         sudo i2cdetect -r -y 1
         
+    For the PCA9685 board set on myconfig.py
+
+        PCA9685_I2C_BUSNUM = 1
 
 
 ## Training methods
