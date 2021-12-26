@@ -64,6 +64,10 @@ https://roscon.ros.org/2019/talks/roscon2019_f110th.pdf
 
 * Supervised learning also referred to as behavioral cloning
 
+### Train an autopilot with keras
+
+To use <a href = "https://docs.donkeycar.com/guide/train_autopilot/">Keras</a>Keras to train a neural network to drive like you
+
 ### Commands
 
 Docker container terminal: Docker exec -it donkeycar1 bash
