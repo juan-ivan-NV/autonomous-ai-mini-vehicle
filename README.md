@@ -7,7 +7,7 @@ The current project is in the researching stage...
 1.- Nvidia Jetson Nano developer board
 2.- Jetson Nano Adapter for the chassis
 3.- PCA9685 servo driver board
-3.- Camera Module
+3.- Camera Module (Sony IMX219)
 4.- WiFi Card
 5.- Antenas
 
@@ -48,6 +48,8 @@ https://roscon.ros.org/2019/talks/roscon2019_f110th.pdf
         donkey createcar --path ~/mycar
         cd ~/mycar
         nano myconfig.py
+        
+        short:$ nano ~/mycar/myconfig.py
 
     Configure I2C PCA9685
 
