@@ -61,6 +61,17 @@ https://roscon.ros.org/2019/talks/roscon2019_f110th.pdf
 
         PCA9685_I2C_BUSNUM = 1
 
+    Configure the Sony IMX219 cam
+
+    Calibrate the car
+
+    Run
+        cd ~/mycar
+        python manage.py drive
+
+        In donkeycar ooen a browser and: 127.0.0.1:8887/drive
+
+
 
 ## Training methods
 
