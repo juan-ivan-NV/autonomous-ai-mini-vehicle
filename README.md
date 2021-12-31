@@ -101,6 +101,7 @@ Mistake at connecting the sombrero (PCA9685) board
 Be sure to have te connection set up like this
 
 ![connections image](https://docs.donkeycar.com/assets/Servo_Wiring.png)
+<img src="https://docs.donkeycar.com/assets/Servo_Wiring.png"/>
 
     * Throttle channel 0
     donkey calibrate --channel 0 --bus=1
