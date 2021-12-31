@@ -87,7 +87,6 @@ Docker container terminal: Docker exec -it donkeycar1 bash
 
 # Failed attemts or issues
 
-
 ### Testing with a deprecated board (NVIDIA TK1)
 
 <a href = "https://developer.download.nvidia.com/embedded/jetson/TK1/docs/2_GetStart/Jeston_TK1_User_Guide.pdf">Getting started with NVIDIA Jetson TK1 </a>
@@ -96,3 +95,14 @@ Docker container terminal: Docker exec -it donkeycar1 bash
 
 After making many tests, Jetson TK1 will not be the board for this project because is very old and is not supported any more by NVIDIA, also many newest libraries are incompatible.
 
+### Hardware issues
+
+Mistake at connecting the sombrero (PCA9685) board
+Be sure to have te connection set up like this
+
+![connections image](https://docs.donkeycar.com/assets/Servo_Wiring.png)
+
+    * Throttle channel 0
+    donkey calibrate --channel 0 --bus=1
+    * Steering channel 1
+    donkey calibrate --channel 1 --bus=1
