@@ -85,6 +85,8 @@ To use <a href = "https://docs.donkeycar.com/guide/train_autopilot/">Keras</a>Ke
 
 Docker container terminal: Docker exec -it donkeycar1 bash
 
+For windows vmmem takes a lot of memory, so turn it of: $ wsl --shutdown
+
 # Failed attemts or issues
 
 ### Testing with a deprecated board (NVIDIA TK1)
