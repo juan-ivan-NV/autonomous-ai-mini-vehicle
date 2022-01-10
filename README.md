@@ -69,9 +69,11 @@ https://roscon.ros.org/2019/talks/roscon2019_f110th.pdf
         cd ~/mycar
         python manage.py drive
 
-        In donkeycar ooen a browser and: 127.0.0.1:8887/drive
+        In donkeycar open a browser and: 127.0.0.1:8887/drive
 
+# SSH to the donkey
 
+Instructions from <a href = "https://docs.donkeycar.com/guide/robot_sbc/setup_raspberry_pi/#step-5-connecting-to-the-pi">donkey site</a>
 
 ## Training methods
 
