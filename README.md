@@ -11,7 +11,7 @@ The current project is in the researching stage...
 4.- WiFi Card
 5.- Antenas
 
-6.- Exceed magnet rc car chasis
+6.- Exceed magnet rc car chasis 1/16
 
 Resources:
 
@@ -71,6 +71,8 @@ https://roscon.ros.org/2019/talks/roscon2019_f110th.pdf
 
         In donkeycar open a browser and: 127.0.0.1:8887/drive
 
+        SSH in windows: open a browser and the go to http://192.168.0.69:8887/drive
+
 # SSH to the donkey
 
 Instructions from <a href = "https://docs.donkeycar.com/guide/robot_sbc/setup_raspberry_pi/#step-5-connecting-to-the-pi">donkey site</a>
@@ -85,6 +87,7 @@ To use <a href = "https://docs.donkeycar.com/guide/train_autopilot/">Keras</a>Ke
 
 ### Commands
 
+Run the container
 Docker container terminal: Docker exec -it donkeycar1 bash
 
 For windows vmmem takes a lot of memory, so turn it of: $ wsl --shutdown
