@@ -85,6 +85,12 @@ Instructions from <a href = "https://docs.donkeycar.com/guide/robot_sbc/setup_ra
 
 To use <a href = "https://docs.donkeycar.com/guide/train_autopilot/">Keras</a>Keras to train a neural network to drive like you
 
+Examples:
+
+<a href = "https://www.youtube.com/watch?v=4fXbDf_QWM4">Driving tips</a>
+
+<a href = "https://www.youtube.com/watch?v=aLFuHGlU0CM">NN w behavioral inputs</a>
+
 ### Commands
 
 Run the container
