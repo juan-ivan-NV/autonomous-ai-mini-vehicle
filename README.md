@@ -91,6 +91,16 @@ Examples:
 
 <a href = "https://www.youtube.com/watch?v=aLFuHGlU0CM">NN w behavioral inputs</a>
 
+collect data
+
+* restart python manage.py to create a new tub session. Press <code>Start Recording</code> if using web controller (The joystick will auto record with any non-zero throttle).
+
+* In case of car crash press Stop Car to stop recording, in case of using joystick tap triangle to delete last 5 seconds of records.
+
+* After collecting 10 to 20 laps of good data (5 to 20k images) stop the car with <code>Ctrl-c</code> in the ssh session.
+
+* Data should be stored in the most recent tub folder.
+
 ### Commands
 
 Run the container
