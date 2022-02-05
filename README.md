@@ -101,6 +101,12 @@ collect data
 
 * Data should be stored in the most recent tub folder.
 
+#### Trainsfer the data from the car to the computer
+
+Is recommended to transfer the data to a PC computer to train, this training can be done in the Nano but the process is quite slow 
+
+<code>rsync -rv --progress --partial pi@<your_pi_ip_address>:~/mycar/data/  ~/mycar/data/</code>
+
 ### Commands
 
 Run the container
