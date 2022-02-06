@@ -103,7 +103,9 @@ collect data
 
 #### Trainsfer the data from the car to the computer
 
-Is recommended to transfer the data to a PC computer to train, this training can be done in the Nano but the process is quite slow 
+Is recommended to transfer the data to a PC computer to train, this training can be done in the Nano but the process is quite slow.
+
+In a new terminal session on your host PC use rsync to copy your cars folder from the dev board.
 
 <code>rsync -rv --progress --partial pi@<your_pi_ip_address>:~/mycar/data/  ~/mycar/data/</code>
 
