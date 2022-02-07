@@ -71,11 +71,18 @@ https://roscon.ros.org/2019/talks/roscon2019_f110th.pdf
 
         In donkeycar open a browser and: 127.0.0.1:8887/drive
 
-        SSH in windows: open a browser and the go to http://192.168.0.69:8887/drive
+        SSH in windows: open a browser and the go to http://192.168.2.103:8887/drive
 
 # SSH to the donkey
 
+First is important to locate your Pi on the network
+
+<code>ifconfig wlan0</code> or <code>ip -br a</code> to know the ip address
+
 Instructions from <a href = "https://docs.donkeycar.com/guide/robot_sbc/setup_raspberry_pi/#step-5-connecting-to-the-pi">donkey site</a>
+
+Or install <a href = "https://www.putty.org/">putty (for windows)</a>
+
 
 ## Training methods
 
@@ -131,10 +138,12 @@ After making many tests, Jetson TK1 will not be the board for this project becau
 Mistake at connecting the sombrero (PCA9685) board
 Be sure to have te connection set up like this
 
-![connections image](https://docs.donkeycar.com/assets/Servo_Wiring.png)
-<img src="https://docs.donkeycar.com/assets/Servo_Wiring.png"/>
+<center>
+<img src='https://docs.donkeycar.com/assets/Servo_Wiring.png' />
+<figcaption>PCA9685 connections</figcaption></center>
 
     * Throttle channel 0
     donkey calibrate --channel 0 --bus=1
     * Steering channel 1
     donkey calibrate --channel 1 --bus=1
+
