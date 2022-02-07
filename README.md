@@ -79,10 +79,24 @@ First is important to locate your Pi on the network
 
 <code>ifconfig wlan0</code> or <code>ip -br a</code> to know the ip address
 
+turn off session on ssh
+
+<code>sudo power off</code>
+
 Instructions from <a href = "https://docs.donkeycar.com/guide/robot_sbc/setup_raspberry_pi/#step-5-connecting-to-the-pi">donkey site</a>
 
 Or install <a href = "https://www.putty.org/">putty (for windows)</a>
 
+## Controls
+
+l = left
+j = righ
+i = forward
+
+joistick
+
+run the main program as
+<code>python manage.py drive --js</code>
 
 ## Training methods
 
