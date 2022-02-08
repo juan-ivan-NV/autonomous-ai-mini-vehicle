@@ -79,7 +79,7 @@ First is important to locate your Pi on the network
 
 <code>ifconfig wlan0</code> or <code>ip -br a</code> to know the ip address
 
-turn off session on ssh
+turn off nano on ssh
 
 <code>sudo power off</code>
 
@@ -87,13 +87,15 @@ Instructions from <a href = "https://docs.donkeycar.com/guide/robot_sbc/setup_ra
 
 Or install <a href = "https://www.putty.org/">putty (for windows)</a>
 
+then open the 
+
 ## Controls
 
-l = left
-j = righ
-i = forward
+    * l = left
+    * j = righ
+    * i = forward
 
-joistick
+To use the <a href = "https://docs.donkeycar.com/parts/controllers/#joystick-controller">joystick</a> take this steps.
 
 run the main program as
 <code>python manage.py drive --js</code>
