@@ -87,7 +87,7 @@ Instructions from <a href = "https://docs.donkeycar.com/guide/robot_sbc/setup_ra
 
 Or install <a href = "https://www.putty.org/">putty (for windows)</a>
 
-then open the 
+Open putty and type the jetson IP addres, when ask for login itroduce <code>hawkbot</code>(in this case) and the password
 
 ## Controls
 
@@ -148,6 +148,11 @@ For windows vmmem takes a lot of memory, so turn it of: $ wsl --shutdown
 <a href = "https://developer.nvidia.com/jetson-tk1-development-pack-1_2">Jetson TK1 Development Pack 1.2</a>
 
 After making many tests, Jetson TK1 will not be the board for this project because is very old and is not supported any more by NVIDIA, also many newest libraries are incompatible.
+
+When trying to coonect SSh there were a lot of issues at the end Putty for windows worked well, here some issues
+
+* Wifi anthena is not properly connected.
+* The dev board (jetson nano in this case) is not connected to the same wifi modem 
 
 ### Hardware issues
 
