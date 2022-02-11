@@ -95,7 +95,16 @@ Open putty and type the jetson IP addres, when ask for login itroduce <code>hawk
     * j = righ
     * i = forward
 
-To use the <a href = "https://docs.donkeycar.com/parts/controllers/#joystick-controller">joystick</a> take this steps.
+To use the <a href = "https://docs.donkeycar.com/parts/controllers/#joystick-controller">joystick</a> take these steps.
+
+In this case is used the set up for XBox One Controller
+
+Important chage:
+    * <code>sudo nano /etc/sysfs.conf</code>
+    Append this to the end of the config
+    * <code>/module/bluetooth/parameters/disable_ertm=1</code>
+    Reboot the computer
+    * <code>sudo reboot</code>
 
 run the main program as
 <code>python manage.py drive --js</code>
