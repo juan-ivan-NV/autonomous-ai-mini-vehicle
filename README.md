@@ -177,3 +177,5 @@ Be sure to have te connection set up like this
     * Steering channel 1
     donkey calibrate --channel 1 --bus=1
 
+Issues while trying to connect the Joystic to the nano
+
