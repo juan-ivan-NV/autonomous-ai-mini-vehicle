@@ -99,6 +99,8 @@ To use the <a href = "https://docs.donkeycar.com/parts/controllers/#joystick-con
 
 In this case is used the set up for XBox One Controller
 
+Instructions at this <a href = "https://www.roboticsbuildlog.com/hardware/xbox-one-controller-with-nvidia-jetson-nano">site</a>
+
 Important chage:
     * <code>sudo nano /etc/sysfs.conf</code>
     Append this to the end of the config
