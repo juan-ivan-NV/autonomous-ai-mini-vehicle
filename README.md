@@ -179,5 +179,11 @@ Be sure to have te connection set up like this
     * Steering channel 1
     donkey calibrate --channel 1 --bus=1
 
-Issues while trying to connect the Joystic to the nano
+#### Issues while trying to connect the Joystic to the nano 
+Solved reading this <a href = "https://dmccreary.medium.com/a-joystick-for-your-donkeycar-d4266c0b91f4">meduin</a> 
+
+#### Issues with the server and the joystick
+It seems that the joystick does not work with the local server as is read in this <a href = "https://github.com/autorope/donkeycar/issues/318">github issue</a>
+
+
 
