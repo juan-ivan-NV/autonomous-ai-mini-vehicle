@@ -10,8 +10,9 @@ The current project is in the researching stage...
 3.- Camera Module (Sony IMX219)
 4.- WiFi Card
 5.- Antenas
+6.- <a href = "https://yaoota.com/en-ke/product/generic-hot-sale-lemonjoy-joystick-24g-wireless-gamepad-usb-price-from-jumia-kenya">Joystick</a> 
 
-6.- Exceed magnet rc car chasis 1/16
+7.- Exceed magnet rc car chasis 1/16
 
 Resources:
 
@@ -183,7 +184,7 @@ Be sure to have te connection set up like this
 Solved reading this <a href = "https://dmccreary.medium.com/a-joystick-for-your-donkeycar-d4266c0b91f4">meduin</a> 
 
 #### Issues with the server and the joystick
-It seems that the joystick does not work with the local server as is read in this <a href = "https://github.com/autorope/donkeycar/issues/318">github issue</a>
+It seems that the local server (IU server) does not work with the joystick as is read in this <a href = "https://github.com/autorope/donkeycar/issues/318">github issue</a>
 
 
 
