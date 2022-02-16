@@ -164,6 +164,7 @@ After making many tests, Jetson TK1 will not be the board for this project becau
 When trying to coonect SSh there were a lot of issues at the end Putty for windows worked well, here some issues
 
 * Wifi anthena is not properly connected.
+* Wifi anthena is deactivated from the board settings.
 * The dev board (jetson nano in this case) is not connected to the same wifi modem 
 
 ### Hardware issues
