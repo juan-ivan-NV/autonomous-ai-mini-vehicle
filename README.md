@@ -140,9 +140,15 @@ collect data
 
 Is recommended to transfer the data to a PC computer to train, this training can be done in the Nano but the process is quite slow.
 
-In a new terminal session on your host PC use rsync to copy your cars folder from the dev board.
+1.- In a new terminal session on your host PC use rsync to copy your cars folder from the dev board.
 
 <code>rsync -rv --progress --partial pi@<your_pi_ip_address>:~/mycar/data/  ~/mycar/data/</code>
+
+#### TRain a model
+
+2.- In the same terminal we can run the training script on the latest tub by passing the path to that tub as an argumennt.
+
+<code>donkey train --tub <tub folder names comma separated> --model ./models/mypilot.h5 </code>
 
 ### Commands
 
