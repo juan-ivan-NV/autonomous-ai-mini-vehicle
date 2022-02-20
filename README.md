@@ -144,6 +144,8 @@ Is recommended to transfer the data to a PC computer to train, this training can
 
 <code>rsync -rv --progress --partial pi@<your_pi_ip_address>:~/mycar/data/  ~/mycar/data/</code>
 
+For this you should intall rsync for <a href = "https://svi.nl/RsyncOnWindows">windows</a> or <a href = "https://www.hostinger.com/tutorials/how-to-use-rsync">linux</a>
+
 #### <a href = "https://docs.donkeycar.com/guide/train_autopilot/">TRain a model</a>
 
 2.- In the same terminal we can run the training script on the latest tub by passing the path to that tub as an argumennt.
