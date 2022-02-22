@@ -144,7 +144,7 @@ Is recommended to transfer the data to a PC computer to train, this training can
 
 <code>rsync -rv --progress --partial pi@<your_pi_ip_address>:~/mycar/data/  ~/mycar/data/</code>
 
-For this you should intall rsync for <a href = "https://svi.nl/RsyncOnWindows">windows</a> or <a href = "https://www.hostinger.com/tutorials/how-to-use-rsync">linux</a>
+For this you should intall rsync for <a href = "https://alanbarber.com/post/installing-rsync-on-windows/">windows</a> or <a href = "https://www.hostinger.com/tutorials/how-to-use-rsync">linux</a>
 
 #### <a href = "https://docs.donkeycar.com/guide/train_autopilot/">TRain a model</a>
 
@@ -194,6 +194,4 @@ Solved reading this <a href = "https://dmccreary.medium.com/a-joystick-for-your-
 
 #### Issues with the server and the joystick
 It seems that the local server (IU server) does not work with the joystick as is read in this <a href = "https://github.com/autorope/donkeycar/issues/318">github issue</a>
-
-
 
