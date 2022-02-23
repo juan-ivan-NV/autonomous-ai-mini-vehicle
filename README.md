@@ -142,9 +142,11 @@ Is recommended to transfer the data to a PC computer to train, this training can
 
 1.- In a new terminal session on your host PC use rsync to copy your cars folder from the dev board.
 
-<code>rsync -rv --progress --partial pi@<your_pi_ip_address>:~/mycar/data/  ~/mycar/data/</code>
+<code>rsync -rv --progress --partial board_name@<your_pi_ip_address>:~/mycar/data/  ~/mycar/data/</code>
 
 For this you should intall rsync for <a href = "https://alanbarber.com/post/installing-rsync-on-windows/">windows</a> or <a href = "https://www.hostinger.com/tutorials/how-to-use-rsync">linux</a>
+
+Another option (best option) is to run the docker container terminal, install rsync and run the command to get the data files
 
 #### <a href = "https://docs.donkeycar.com/guide/train_autopilot/">TRain a model</a>
 
@@ -155,7 +157,7 @@ For this you should intall rsync for <a href = "https://alanbarber.com/post/inst
 ### Commands
 
 Run the container
-Docker container terminal: Docker exec -it donkeycar1 bash
+    * Docker container terminal: Docker exec -it donkeycar1 bash
 
 For windows vmmem takes a lot of memory, so turn it of: $ wsl --shutdown
 
