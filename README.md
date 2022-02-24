@@ -150,6 +150,8 @@ Another option (best option) is to run the docker container terminal, install rs
 
 #### <a href = "https://docs.donkeycar.com/guide/train_autopilot/">TRain a model</a>
 
+Again is recommended to enter the docker container terminal
+
 2.- In the same terminal we can run the training script on the latest tub by passing the path to that tub as an argumennt.
 
 <code>donkey train --tub <tub folder names comma separated> --model ./models/mypilot.h5 </code>
