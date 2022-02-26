@@ -154,7 +154,10 @@ Again is recommended to enter the docker container terminal
 
 2.- In the same terminal we can run the training script on the latest tub by passing the path to that tub as an argumennt.
 
-<code>donkey train --tub <tub folder names comma separated> --model ./models/mypilot.h5 </code>
+<code>donkey contrain --tub <tub folder names comma separated> --model ./models/mypilot.h5 </code>
+
+* you can also train your model trough this <a href = "https://colab.research.google.com/github/uwesterr/MlFastAiBlog/blob/master/_notebooks/2020-03-01-TrainDonkeyCar.ipynb">collab notebook</a>
+
 
 ### Commands
 
