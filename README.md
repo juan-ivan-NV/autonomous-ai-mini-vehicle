@@ -162,9 +162,9 @@ Again is recommended to enter the docker container terminal
 ### Commands
 
 Run the container
-    * Docker container terminal: Docker exec -it donkeycar1 bash
+    * Docker container terminal: <code>$ Docker exec -it donkeycar1 bash</code>
 
-For windows vmmem takes a lot of memory, so turn it of: $ wsl --shutdown
+For windows vmmem takes a lot of memory, so turn it of: <code>$ wsl --shutdown</code>
 
 # Failed attemts or issues
 
