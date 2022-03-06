@@ -1,24 +1,22 @@
-# The goal is to build a little self driving car.
+# Building a sef driving car.
 
-The current project is in the researching stage...
+## Hardware.
 
-## Materials
+1.- Nvidia Jetson Nano developer board.
 
-1.- Nvidia Jetson Nano developer board
-2.- Jetson Nano Adapter for the chassis
-3.- PCA9685 servo driver board
-3.- Camera Module (Sony IMX219)
-4.- WiFi Card
-5.- Antenas
-6.- <a href = "https://yaoota.com/en-ke/product/generic-hot-sale-lemonjoy-joystick-24g-wireless-gamepad-usb-price-from-jumia-kenya">Joystick</a> 
+2.- Jetson Nano Adapter for the chassis.
 
-7.- Exceed magnet rc car chasis 1/16
+3.- PCA9685 servo driver board.
 
-Resources:
+4.- Camera Module (Sony IMX219).
 
-A good presentation to understand how does it work.
-https://roscon.ros.org/2019/talks/roscon2019_f110th.pdf
+5.- WiFi Card.
 
+6.- Antenas.
+
+7.- <a href = "https://yaoota.com/en-ke/product/generic-hot-sale-lemonjoy-joystick-24g-wireless-gamepad-usb-price-from-jumia-kenya">Joystick</a>. 
+
+8.- Exceed magnet rc car chasis 1/16.
 
 # Software set up
 
@@ -26,21 +24,21 @@ https://roscon.ros.org/2019/talks/roscon2019_f110th.pdf
 
 <a href = "https://docs.donkeycar.com/">Donkey Car Home page </a>
 
-1.- <a href = "https://docs.donkeycar.com/guide/install_software/#step-1-install-software-on-host-pc">Install Donkeycar</a> on Windows or Linux
+### 1.- <a href = "https://docs.donkeycar.com/guide/install_software/#step-1-install-software-on-host-pc">Install Donkeycar</a> on Windows or Linux
 
 * This can be done step by step
 
-* Or with <a href = "https://medium.com/robocar-store/how-to-install-a-virtual-donkey-car-on-your-pc-using-docker-9e4e4fcf718a">docker</a>
+* Or with <a href = "https://medium.com/robocar-store/how-to-install-a-virtual-donkey-car-on-your-pc-using-docker-9e4e4fcf718a">docker</a> (I'd recomend to use docker because it worked for me)
 
-2.- Install Donkey Simulator for <a href = "https://youtu.be/J6Ll5Obtuxk">linux</a> or <a href = "https://youtu.be/wqQMmHVT8qw">windows</a>
+### 2.- Install Donkey Simulator for <a href = "https://youtu.be/J6Ll5Obtuxk">linux</a> or <a href = "https://youtu.be/wqQMmHVT8qw">windows</a>
 
-* To use docker with donkey simulator run the <code>donkey_sim.exe</code> app then access any car container, for example <code>Docker exec -it donkeycar1 bash</code> and finally run manage.py <code>python manage.py drive</code>
+* To use docker with donkey simulator run the <code>donkey_sim.exe</code> app then access any car container, for example <code>Docker exec -it donkeycar1 bash</code> and finally run <code>python manage.py drive</code>
 
-3.- Install Software On Donkeycar in this case the <a href = "https://docs.donkeycar.com/guide/robot_sbc/setup_jetson_nano/">Jetson Nano</a>
+### 3.- Install Donkeycar software on your developer board, in this case <a href = "https://docs.donkeycar.com/guide/robot_sbc/setup_jetson_nano/">Jetson Nano</a>
 
-4.- Just clone the repo <a href = "https://github.com/autorope/donkeycar">Donkeycar Python Code</a>
+### 4.- Just clone the repo <a href = "https://github.com/autorope/donkeycar">Donkeycar Python Code</a>
 
-5.- <a href = "https://docs.donkeycar.com/guide/create_application/">Create your car application</a>
+### 5.- <a href = "https://docs.donkeycar.com/guide/create_application/">Create your car application</a>
 
 * Steps:
 
@@ -64,19 +62,27 @@ https://roscon.ros.org/2019/talks/roscon2019_f110th.pdf
 
     Configure the Sony IMX219 cam
 
-    Calibrate the car
-
-    Run
+### 6.- <a href = "https://docs.donkeycar.com/guide/calibrate/">Calibrate the car</a>
+        
         cd ~/mycar
         python manage.py drive
 
-        In donkeycar open a browser and: 127.0.0.1:8887/drive
+    Dirve the car and calibrate the throttle and steering by editing the <code>myconfig.py</code> file 
 
-        SSH in windows: open a browser and the go to http://192.168.2.103:8887/drive
+### 7.- Drive your car and start recording
+
+
+### 8.- Train a model
+
+
+### 9.- Self driving donkey using the model
+
+
+
 
 # SSH to the donkey
 
-First is important to locate your Pi on the network
+*   Locate your Pi on the network
 
 <code>ifconfig wlan0</code> or <code>ip -br a</code> to know the ip address
 
@@ -148,7 +154,7 @@ For this you should intall rsync for <a href = "https://alanbarber.com/post/inst
 
 Another option (best option) is to run the docker container terminal, install rsync and run the command to get the data files
 
-#### <a href = "https://docs.donkeycar.com/guide/train_autopilot/">TRain a model</a>
+#### <a href = "https://docs.donkeycar.com/guide/train_autopilot/">Train a model</a>
 
 Again is recommended to enter the docker container terminal
 
@@ -166,7 +172,7 @@ Run the container
 
 For windows vmmem takes a lot of memory, so turn it of: <code>$ wsl --shutdown</code>
 
-# Failed attemts or issues
+# Failed attempts or issues
 
 ### Testing with a deprecated board (NVIDIA TK1)
 
@@ -188,7 +194,7 @@ Mistake at connecting the sombrero (PCA9685) board
 Be sure to have te connection set up like this
 
 <center>
-<img src='https://docs.donkeycar.com/assets/Servo_Wiring.png' />
+<img src='https://docs.donkeycar.com/assets/Servo_Wiring.png'/>
 <figcaption>PCA9685 connections</figcaption></center>
 
     * Throttle channel 0
@@ -202,3 +208,21 @@ Solved reading this <a href = "https://dmccreary.medium.com/a-joystick-for-your-
 #### Issues with the server and the joystick
 It seems that the local server (IU server) does not work with the joystick as is read in this <a href = "https://github.com/autorope/donkeycar/issues/318">github issue</a>
 
+
+# Usefull commnads and instructions
+
+### Open the donkey UI in the browser
+
+Following IP address can change depending on your network.
+
+    In donkeycar open a browser and: 127.0.0.1:8887/drive
+
+    SSH in windows: open a browser and the go to http://192.168.2.103:8887/drive
+
+
+
+
+Resources:
+
+A good presentation to understand how does it work.
+https://roscon.ros.org/2019/talks/roscon2019_f110th.pdf
