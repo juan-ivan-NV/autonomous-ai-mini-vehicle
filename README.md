@@ -32,7 +32,7 @@
 
 ### 2.- Install Donkey Simulator for <a href = "https://youtu.be/J6Ll5Obtuxk">linux</a> or <a href = "https://youtu.be/wqQMmHVT8qw">windows</a>
 
-* To use docker with donkey simulator run the <code>donkey_sim.exe</code> app then access any car container, for example <code>Docker exec -it donkeycar1 bash</code> and finally run <code>python manage.py drive</code>
+* To use docker with donkey simulator run the <code>donkey_sim.exe</code> app, then access to any car container, for example <code>Docker exec -it donkeycar1 bash</code> and finally run <code>python manage.py drive</code>
 
 ### 3.- Install Donkeycar software on your developer board, in this case <a href = "https://docs.donkeycar.com/guide/robot_sbc/setup_jetson_nano/">Jetson Nano</a>
 
@@ -71,12 +71,58 @@
 
 ### 7.- Drive your car and start recording
 
+Driving with the keyboard 
 
-### 8.- Train a model
+    run <code>python manage.py drive</code>
 
+open the donkey UI in donkey <code>http://127.0.0.1:8887/drive</code> in your PC <code>http://192.168.2.103:8887/drive</code> (IP address can change dependyng on the network)
+
+    <code>space</code> : stop car and stop recording
+    <code>r</code> : toggle recording
+    <code>i</code> : increase throttle
+    <code>k</code> : decrease throttle
+    <code>j</code> : turn left
+    <code>l</code> : turn right
+
+To use the <a href = "https://docs.donkeycar.com/parts/controllers/#joystick-controller">joystick</a> (set up for XBox One Controller in this case) take these steps.
+
+Instructions at this <a href = "https://www.roboticsbuildlog.com/hardware/xbox-one-controller-with-nvidia-jetson-nano">site</a>
+
+Important chage:
+    * <code>sudo nano /etc/sysfs.conf</code>
+    Append this to the end of the config
+    * <code>/module/bluetooth/parameters/disable_ertm=1</code>
+    Reboot the computer
+    * <code>sudo reboot</code>
+
+to dtive with the joystick run <code>python manage.py drive --js</code> 
+
+or 
+
+go to <code>nano myconfig.py</code> and set <code>USE_JOYSTICK_AS_DEFAULT = True</code> and then <code>python manage.py drive --js</code>
+
+
+### 8.- Train an autopilot(model) with keras
+
+* Supervised learning also referred to as behavioral cloning
+
+Use <a href = "https://docs.donkeycar.com/guide/train_autopilot/">Keras</a> to train a neural network to drive like you
+
+Examples:
+
+<a href = "https://www.youtube.com/watch?v=4fXbDf_QWM4">Driving tips</a>
+
+<a href = "https://www.youtube.com/watch?v=aLFuHGlU0CM">NN w behavioral inputs</a>
+
+Transfer your recordings (tubs) and settings to the place where you will train your model...
+
+*   Train on yor donkeycar board (raspberry, nano, coral, etc.)
+*   Train on your pc.
+*   Train on a colab notebook.
+
+Run <code>donkey train --tub <tub folder names comma separated> --model ./models/mypilot.h5</code>
 
 ### 9.- Self driving donkey using the model
-
 
 
 
@@ -94,53 +140,9 @@ Instructions from <a href = "https://docs.donkeycar.com/guide/robot_sbc/setup_ra
 
 Or install <a href = "https://www.putty.org/">putty (for windows)</a>
 
-Open putty and type the jetson IP addres, when ask for login itroduce <code>hawkbot</code>(in this case) and the password
+Open putty and type the jetson IP addres, when ask for login itroduce <code>hawkbot</code>(in this case) and the password.
 
-## Controls
 
-    * l = left
-    * j = righ
-    * i = forward
-
-To use the <a href = "https://docs.donkeycar.com/parts/controllers/#joystick-controller">joystick</a> take these steps.
-
-In this case is used the set up for XBox One Controller
-
-Instructions at this <a href = "https://www.roboticsbuildlog.com/hardware/xbox-one-controller-with-nvidia-jetson-nano">site</a>
-
-Important chage:
-    * <code>sudo nano /etc/sysfs.conf</code>
-    Append this to the end of the config
-    * <code>/module/bluetooth/parameters/disable_ertm=1</code>
-    Reboot the computer
-    * <code>sudo reboot</code>
-
-run the main program as
-<code>python manage.py drive --js</code>
-
-## Training methods
-
-* Supervised learning also referred to as behavioral cloning
-
-### Train an autopilot with keras
-
-To use <a href = "https://docs.donkeycar.com/guide/train_autopilot/">Keras</a>Keras to train a neural network to drive like you
-
-Examples:
-
-<a href = "https://www.youtube.com/watch?v=4fXbDf_QWM4">Driving tips</a>
-
-<a href = "https://www.youtube.com/watch?v=aLFuHGlU0CM">NN w behavioral inputs</a>
-
-collect data
-
-* restart python manage.py to create a new tub session. Press <code>Start Recording</code> if using web controller (The joystick will auto record with any non-zero throttle).
-
-* In case of car crash press Stop Car to stop recording, in case of using joystick tap triangle to delete last 5 seconds of records.
-
-* After collecting 10 to 20 laps of good data (5 to 20k images) stop the car with <code>Ctrl-c</code> in the ssh session.
-
-* Data should be stored in the most recent tub folder.
 
 #### Trainsfer the data from the car to the computer
 
@@ -211,13 +213,6 @@ It seems that the local server (IU server) does not work with the joystick as is
 
 # Usefull commnads and instructions
 
-### Open the donkey UI in the browser
-
-Following IP address can change depending on your network.
-
-    In donkeycar open a browser and: 127.0.0.1:8887/drive
-
-    SSH in windows: open a browser and the go to http://192.168.2.103:8887/drive
 
 
 
