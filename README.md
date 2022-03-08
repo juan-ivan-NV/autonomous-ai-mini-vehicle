@@ -116,7 +116,9 @@ Examples:
 
 Transfer your recordings (tubs) and settings to the place where you will train your model...
 
-*   Train on yor donkeycar board (raspberry, nano, coral, etc.)
+<code>rsync -rv --progress --partial pi@<your_pi_ip_address>:~/mycar/data/  ~/mycar/data/</code>
+
+*   Train on your donkeycar board (raspberry, nano, coral, etc.)
 *   Train on your pc.
 *   Train on a colab notebook.
 
@@ -124,55 +126,54 @@ Run <code>donkey train --tub <tub folder names comma separated> --model ./models
 
 ### 9.- Self driving donkey using the model
 
+Transfer the trained model back to the car
+
+<code>rsync -rv --progress --partial ~/mycar/models/ pi@<your_ip_address>:~/mycar/models/<code>
+
+Start your car again and pass it your model to drive
+
+<code>python manage.py drive --model ~/mycar/models/mypilot.h5</code>
+
+Better performance is achieved with tflite mode.
+
+<code>python manage.py drive --model ~/mycar/models/mypilot.tflite --type tflite_linear</code>
 
 
-# SSH to the donkey
+# Connect your pc to the donnkey
+
+Options ...
+
+## 1.- SSH to the donkey
 
 *   Locate your Pi on the network
 
 <code>ifconfig wlan0</code> or <code>ip -br a</code> to know the ip address
 
-turn off nano on ssh
+Instructions from <a href = "https://docs.donkeycar.com/guide/robot_sbc/setup_raspberry_pi/#step-5-connecting-to-the-pi">donkey site</a>.
 
-<code>sudo power off</code>
 
-Instructions from <a href = "https://docs.donkeycar.com/guide/robot_sbc/setup_raspberry_pi/#step-5-connecting-to-the-pi">donkey site</a>
+<code>ssh pi@raspberrypi.local</code> or <code>ssh pi@<your pi ip address></code>
 
-Or install <a href = "https://www.putty.org/">putty (for windows)</a>
+## 2.- Install <a href = "https://www.putty.org/">putty (for windows)</a>
 
 Open putty and type the jetson IP addres, when ask for login itroduce <code>hawkbot</code>(in this case) and the password.
 
 
+# Docker: 
 
 #### Trainsfer the data from the car to the computer
 
-Is recommended to transfer the data to a PC computer to train, this training can be done in the Nano but the process is quite slow.
-
-1.- In a new terminal session on your host PC use rsync to copy your cars folder from the dev board.
-
-<code>rsync -rv --progress --partial board_name@<your_pi_ip_address>:~/mycar/data/  ~/mycar/data/</code>
-
-For this you should intall rsync for <a href = "https://alanbarber.com/post/installing-rsync-on-windows/">windows</a> or <a href = "https://www.hostinger.com/tutorials/how-to-use-rsync">linux</a>
-
-Another option (best option) is to run the docker container terminal, install rsync and run the command to get the data files
+Run the docker container terminal, install rsync and run the command to get the data files
 
 #### <a href = "https://docs.donkeycar.com/guide/train_autopilot/">Train a model</a>
 
-Again is recommended to enter the docker container terminal
+Enter the docker container terminal.
 
-2.- In the same terminal we can run the training script on the latest tub by passing the path to that tub as an argumennt.
+In the same terminal we can run the training script on the latest tub by passing the path to that tub as an argument.
 
 <code>donkey contrain --tub <tub folder names comma separated> --model ./models/mypilot.h5 </code>
 
-* you can also train your model trough this <a href = "https://colab.research.google.com/github/uwesterr/MlFastAiBlog/blob/master/_notebooks/2020-03-01-TrainDonkeyCar.ipynb">collab notebook</a>
-
-
-### Commands
-
-Run the container
-    * Docker container terminal: <code>$ Docker exec -it donkeycar1 bash</code>
-
-For windows vmmem takes a lot of memory, so turn it of: <code>$ wsl --shutdown</code>
+* you can also train your model trough this <a href = "https://colab.research.google.com/github/uwesterr/MlFastAiBlog/blob/master/_notebooks/2020-03-01-TrainDonkeyCar.ipynb">collab notebook</a>.
 
 # Failed attempts or issues
 
@@ -213,11 +214,14 @@ It seems that the local server (IU server) does not work with the joystick as is
 
 # Usefull commnads and instructions
 
+    * Docker container terminal: <code>$ Docker exec -it donkeycar1 bash</code>
+
+    * Turn off vmmem (Windows docker process): <code>$ wsl --shutdown</code>
+
+    * Turn off nano on ssh: <code>sudo power off</code>
 
 
-
-
-Resources:
+# Resources:
 
 A good presentation to understand how does it work.
 https://roscon.ros.org/2019/talks/roscon2019_f110th.pdf
