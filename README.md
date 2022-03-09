@@ -75,14 +75,14 @@ Driving with the keyboard
 
     run <code>python manage.py drive</code>
 
-open the donkey UI in donkey <code>http://127.0.0.1:8887/drive</code> in your PC <code>http://192.168.2.103:8887/drive</code> (IP address can change dependyng on the network)
+open the donkey UI in donkey <code>http://127.0.0.1:8887/drive</code> in your PC <code>http://192.168.2.103:8887/drive</code> (IP address can change dependyng on the network).
 
-    <code>space</code> : stop car and stop recording
-    <code>r</code> : toggle recording
-    <code>i</code> : increase throttle
-    <code>k</code> : decrease throttle
-    <code>j</code> : turn left
-    <code>l</code> : turn right
+<code>space</code> : stop car and stop recording
+<code>r</code> : toggle recording
+<code>i</code> : increase throttle
+<code>k</code> : decrease throttle
+<code>j</code> : turn left
+<code>l</code> : turn right
 
 To use the <a href = "https://docs.donkeycar.com/parts/controllers/#joystick-controller">joystick</a> (set up for XBox One Controller in this case) take these steps.
 
@@ -99,7 +99,7 @@ to dtive with the joystick run <code>python manage.py drive --js</code>
 
 or 
 
-go to <code>nano myconfig.py</code> and set <code>USE_JOYSTICK_AS_DEFAULT = True</code> and then <code>python manage.py drive --js</code>
+go to <code>nano myconfig.py</code> and set <code>USE_JOYSTICK_AS_DEFAULT = True</code> and then run <code>python manage.py drive --js</code>
 
 
 ### 8.- Train an autopilot(model) with keras
@@ -112,7 +112,7 @@ Examples:
 
 <a href = "https://www.youtube.com/watch?v=4fXbDf_QWM4">Driving tips</a>
 
-<a href = "https://www.youtube.com/watch?v=aLFuHGlU0CM">NN w behavioral inputs</a>
+<a href = "https://www.youtube.com/watch?v=aLFuHGlU0CM">NN with behavioral inputs</a>
 
 Transfer your recordings (tubs) and settings to the place where you will train your model...
 
@@ -128,7 +128,7 @@ Run <code>donkey train --tub <tub folder names comma separated> --model ./models
 
 Transfer the trained model back to the car
 
-<code>rsync -rv --progress --partial ~/mycar/models/ pi@<your_ip_address>:~/mycar/models/<code>
+<code>rsync -rv --progress --partial ~/mycar/models/ pi@<your_ip_address>:~/mycar/models/<code>.
 
 Start your car again and pass it your model to drive
 
@@ -141,13 +141,9 @@ Better performance is achieved with tflite mode.
 
 # Connect your pc to the donnkey
 
-Options ...
+<h3>Options ...</h3>
 
 ## 1.- SSH to the donkey
-
-*   Locate your Pi on the network
-
-<code>ifconfig wlan0</code> or <code>ip -br a</code> to know the ip address
 
 Instructions from <a href = "https://docs.donkeycar.com/guide/robot_sbc/setup_raspberry_pi/#step-5-connecting-to-the-pi">donkey site</a>.
 
@@ -214,12 +210,13 @@ It seems that the local server (IU server) does not work with the joystick as is
 
 # Usefull commnads and instructions
 
-    * Docker container terminal: <code>$ Docker exec -it donkeycar1 bash</code>
+Docker container terminal: <code>$ Docker exec -it donkeycar1 bash</code>
 
-    * Turn off vmmem (Windows docker process): <code>$ wsl --shutdown</code>
+Turn off vmmem (Windows docker process): <code>$ wsl --shutdown</code>
 
-    * Turn off nano on ssh: <code>sudo power off</code>
+Turn off nano on ssh: <code>sudo power off</code>
 
+Locate your Pi on the network: <code>ifconfig wlan0</code> or <code>ip -br a</code>
 
 # Resources:
 
