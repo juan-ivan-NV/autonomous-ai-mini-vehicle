@@ -77,12 +77,12 @@ Driving with the keyboard
 
 open the donkey UI in donkey <code>http://127.0.0.1:8887/drive</code> in your PC <code>http://192.168.2.103:8887/drive</code> (IP address can change dependyng on the network).
 
-<code>space</code> : stop car and stop recording
-<code>r</code> : toggle recording
-<code>i</code> : increase throttle
-<code>k</code> : decrease throttle
-<code>j</code> : turn left
-<code>l</code> : turn right
+<code>space</code> : stop car and stop recording.
+<code>r</code> : toggle recording.
+<code>i</code> : increase throttle.
+<code>k</code> : decrease throttle.
+<code>j</code> : turn left.
+<code>l</code> : turn right.
 
 To use the <a href = "https://docs.donkeycar.com/parts/controllers/#joystick-controller">joystick</a> (set up for XBox One Controller in this case) take these steps.
 
@@ -128,7 +128,9 @@ Run <code>donkey train --tub <tub folder names comma separated> --model ./models
 
 Transfer the trained model back to the car
 
-<code>rsync -rv --progress --partial ~/mycar/models/ pi@<your_ip_address>:~/mycar/models/<code>.
+<code>rsync -rv --progress --partial ~/mycar/models/ pi@<your_ip_address>:~/mycar/models/<code>
+
+<code>rsync -rv --progress --partial /mycar/ hawkbot@192.168.2.104:~/mycar/config.py</code>
 
 Start your car again and pass it your model to drive
 
