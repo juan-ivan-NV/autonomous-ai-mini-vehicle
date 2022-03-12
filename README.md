@@ -130,7 +130,7 @@ Transfer the trained model back to the car
 
 <code>rsync -rv --progress --partial ~/mycar/models/ pi@<your_ip_address>:~/mycar/models/<code>
 
-<code>rsync -rv --progress --partial /mycar/ hawkbot@192.168.2.104:~/mycar/config.py</code>
+<code>rsync -rv --progress --partial ~/mycar/config.py hawkbot@192.168.2.104:~/mycar/config.py</code>
 
 Start your car again and pass it your model to drive
 
