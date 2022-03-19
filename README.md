@@ -203,6 +203,8 @@ Be sure to have te connection set up like this
     * Steering channel 1
     donkey calibrate --channel 1 --bus=1
 
+* Donkeycar not working on autopilot: <a href = "https://medium.com/robocar-store/robocar-controller-quick-start-guide-bdf8cb16d7ce">Site</a> to get hints
+
 #### Issues while trying to connect the Joystic to the nano 
 Solved reading this <a href = "https://dmccreary.medium.com/a-joystick-for-your-donkeycar-d4266c0b91f4">meduin</a> 
 
