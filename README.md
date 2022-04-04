@@ -118,6 +118,7 @@ Transfer your recordings (tubs) and settings to the place where you will train y
 
 <code>rsync -rv --progress --partial pi@<your_pi_ip_address>:~/mycar/data/  ~/mycar/data/</code>
 
+
 *   Train on your donkeycar board (raspberry, nano, coral, etc.)
 *   Train on your pc.
 *   Train on a colab notebook.
@@ -135,6 +136,8 @@ Transfer the trained model back to the car
 Start your car again and pass it your model to drive
 
 <code>python manage.py drive --model ~/mycar/models/mypilot.h5</code>
+
+In this case <code>python manage.py drive --model ~/mycar/models/model4.h5</code>
 
 Better performance is achieved with tflite mode.
 
@@ -220,7 +223,11 @@ Turn off vmmem (Windows docker process): <code>$ wsl --shutdown</code>
 
 Turn off nano on ssh: <code>sudo power off</code>
 
-Locate your Pi on the network: <code>ifconfig wlan0</code> or <code>ip -br a</code>
+Locate your Pi on the network "inet": <code>ifconfig wlan0</code> or <code>ip -br a</code>
+
+Transfer model from PC to nano, example:
+<code>rsync -rv --progress --partial ~/mycar/models/model4.h5 hawkbot@192.168.100.28:~/mycar/models/</code>
+
 
 # Resources:
 
