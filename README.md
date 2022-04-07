@@ -143,6 +143,15 @@ Better performance is achieved with tflite mode.
 
 <code>python manage.py drive --model ~/mycar/models/mypilot.tflite --type tflite_linear</code>
 
+#### Note:
+
+Autopilot options.
+
+Local angle: trained model controls the steering.
+
+Local pilot: trained model controls the steering and the throttle.
+
+While running the autopilot in the nano, it is important to close any app or unnecessary process like google chrome, otherwise we may consume the whole ram so the autopilot would stop.
 
 # Connect your pc to the donnkey
 
