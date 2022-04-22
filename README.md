@@ -6,9 +6,9 @@
 
 2.- Jetson Nano Adapter for the chassis.
 
-3.- PCA9685 servo driver board.
+3.- <a href = "https://www.twinschip.com/16_Channel_12_Bit_PWM_Servo_Driver_PCA9685">PCA9685 servo driver board.</a>
 
-4.- Camera Module (Sony IMX219).
+4.- <a href = "https://articulo.mercadolibre.com.mx/MLM-1382696013-modulo-de-camara-de-8mp-imx219-chip-soporte-cara-de-vision-n-_JM?matt_tool=19714812&matt_word=&matt_source=google&matt_campaign_id=15696443672&matt_ad_group_id=130236951263&matt_match_type=&matt_network=g&matt_device=c&matt_creative=571618467747&matt_keyword=&matt_ad_position=&matt_ad_type=pla&matt_merchant_id=363140575&matt_product_id=MLM1382696013&matt_product_partition_id=1415689343951&matt_target_id=pla-1415689343951">Camera Module (Sony IMX219).</a>
 
 5.- WiFi Card.
 
