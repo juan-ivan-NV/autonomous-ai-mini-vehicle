@@ -2,7 +2,7 @@
 
 ## Hardware.
 
-1.- Nvidia Jetson Nano developer board.
+1.- <a href = "https://www.nvidia.com/es-la/autonomous-machines/embedded-systems/jetson-nano/product-development/">Nvidia Jetson Nano</a> developer board.
 
 2.- Jetson Nano Adapter for the chassis.
 
@@ -10,13 +10,11 @@
 
 4.- <a href = "https://articulo.mercadolibre.com.mx/MLM-1382696013-modulo-de-camara-de-8mp-imx219-chip-soporte-cara-de-vision-n-_JM?matt_tool=19714812&matt_word=&matt_source=google&matt_campaign_id=15696443672&matt_ad_group_id=130236951263&matt_match_type=&matt_network=g&matt_device=c&matt_creative=571618467747&matt_keyword=&matt_ad_position=&matt_ad_type=pla&matt_merchant_id=363140575&matt_product_id=MLM1382696013&matt_product_partition_id=1415689343951&matt_target_id=pla-1415689343951">Camera Module (Sony IMX219).</a>
 
-5.- WiFi Card.
+5.- <a href = "https://articulo.mercadolibre.com.mx/MLM-669431246-super-potente-nano-wifi-high-speed-150-mbps-24ghz-802i-usb-_JM">WiFi Antenna.</a>
 
-6.- Antenas.
+6.- <a href = "https://yaoota.com/en-ke/product/generic-hot-sale-lemonjoy-joystick-24g-wireless-gamepad-usb-price-from-jumia-kenya">Joystick</a>. 
 
-7.- <a href = "https://yaoota.com/en-ke/product/generic-hot-sale-lemonjoy-joystick-24g-wireless-gamepad-usb-price-from-jumia-kenya">Joystick</a>. 
-
-8.- Exceed magnet rc car chasis 1/16.
+7.- Exceed magnet rc car chasis 1/16.
 
 # Software set up
 
