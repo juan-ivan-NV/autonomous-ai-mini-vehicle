@@ -238,5 +238,9 @@ Transfer model from PC to nano, example:
 
 # Resources:
 
+Full documentation
+
+https://docs.google.com/document/d/1VL0GpUIxIi0ESeYcnQgMA8AwtI_XYRfHmEAJrw0rF60/edit?usp=sharing
+
 A good presentation to understand how does it work.
 https://roscon.ros.org/2019/talks/roscon2019_f110th.pdf
