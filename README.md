@@ -202,12 +202,11 @@ When trying to coonect SSh there were a lot of issues at the end Putty for windo
 ### Hardware issues
 
 Mistake at connecting the sombrero (PCA9685) board
-Be sure to have te connection set up like this
+Be sure to have the connection set up like this
 
 
-![ScreenShot](https://docs.donkeycar.com/assets/Servo_Wiring.png)
 <center>
-<img src='https://docs.donkeycar.com/assets/Servo_Wiring.png'/>
+<img src='images/sombrero.png'/>
 <figcaption>PCA9685 connections</figcaption></center>
 
     * Throttle channel 0
