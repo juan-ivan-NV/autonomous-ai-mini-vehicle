@@ -75,11 +75,11 @@ Driving with the keyboard
 
 open the donkey UI in donkey <code>http://127.0.0.1:8887/drive</code> in your PC <code>http://192.168.2.103:8887/drive</code> (IP address can change dependyng on the network).
 
-<code>space</code> : stop car and stop recording.
-<code>r</code> : toggle recording.
-<code>i</code> : increase throttle.
-<code>k</code> : decrease throttle.
-<code>j</code> : turn left.
+<code>space</code> : stop car and stop recording. <br />
+<code>r</code> : toggle recording. <br />
+<code>i</code> : increase throttle. <br />
+<code>k</code> : decrease throttle. <br />
+<code>j</code> : turn left. <br />
 <code>l</code> : turn right.
 
 To use the <a href = "https://docs.donkeycar.com/parts/controllers/#joystick-controller">joystick</a> (set up for XBox One Controller in this case) take these steps.
