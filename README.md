@@ -86,16 +86,16 @@ To use the <a href = "https://docs.donkeycar.com/parts/controllers/#joystick-con
 
 Instructions at this <a href = "https://www.roboticsbuildlog.com/hardware/xbox-one-controller-with-nvidia-jetson-nano">site</a>
 
-Important chage:
-    * <code>sudo nano /etc/sysfs.conf</code>
+Important change: <br />
+    * <code>sudo nano /etc/sysfs.conf</code><br />
     Append this to the end of the config
-    * <code>/module/bluetooth/parameters/disable_ertm=1</code>
+    * <code>/module/bluetooth/parameters/disable_ertm=1</code><br />
     Reboot the computer
     * <code>sudo reboot</code>
 
-to dtive with the joystick run <code>python manage.py drive --js</code> 
+to drive with the joystick run <code>python manage.py drive --js</code> <br />
 
-or 
+or <br />
 
 go to <code>nano myconfig.py</code> and set <code>USE_JOYSTICK_AS_DEFAULT = True</code> and then run <code>python manage.py drive --js</code>
 
