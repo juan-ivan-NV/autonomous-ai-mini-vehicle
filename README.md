@@ -171,7 +171,9 @@ Open putty and type the jetson IP addres, when ask for login itroduce <code>hawk
 
 #### Trainsfer the data from the car to the computer
 
-Run the docker container terminal, install rsync and run the command to get the data files
+Run the docker container terminal, install rsync and run the command to send the images (tub).
+
+<code>rsync -rv --progress --partial pi@<your_pi_ip_address>:~/mycar/data/  ~/mycar/data/</code>
 
 #### <a href = "https://docs.donkeycar.com/guide/train_autopilot/">Train a model</a>
 
@@ -217,7 +219,7 @@ Be sure to have the connection set up like this
 * Donkeycar not working on autopilot: <a href = "https://medium.com/robocar-store/robocar-controller-quick-start-guide-bdf8cb16d7ce">Site</a> to get hints
 
 #### Issues while trying to connect the Joystic to the nano 
-Solved reading this <a href = "https://dmccreary.medium.com/a-joystick-for-your-donkeycar-d4266c0b91f4">meduin</a> 
+Solved reading this <a href = "https://dmccreary.medium.com/a-joystick-for-your-donkeycar-d4266c0b91f4">medium</a> 
 
 #### Issues with the server and the joystick
 It seems that the local server (IU server) does not work with the joystick as is read in this <a href = "https://github.com/autorope/donkeycar/issues/318">github issue</a>
