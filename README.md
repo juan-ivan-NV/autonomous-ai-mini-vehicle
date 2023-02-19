@@ -14,7 +14,7 @@
 
 6.- <a href = "https://yaoota.com/en-ke/product/generic-hot-sale-lemonjoy-joystick-24g-wireless-gamepad-usb-price-from-jumia-kenya">Joystick</a>. 
 
-7.- Exceed magnet rc car chasis 1/16.
+7.- Magnet exceed rc car chasis 1/16.
 
 # Software set up
 
@@ -26,7 +26,7 @@
 
 * This can be done step by step
 
-* Or with <a href = "https://medium.com/robocar-store/how-to-install-a-virtual-donkey-car-on-your-pc-using-docker-9e4e4fcf718a">docker</a> (I'd recomend to use docker because it worked for me)
+* Or with <a href = "https://medium.com/robocar-store/how-to-install-a-virtual-donkey-car-on-your-pc-using-docker-9e4e4fcf718a">docker</a> (For this project a docker image from docker-hub is used)
 
 ### 2.- Install Donkey Simulator for <a href = "https://youtu.be/J6Ll5Obtuxk">linux</a> or <a href = "https://youtu.be/wqQMmHVT8qw">windows</a>
 
@@ -37,6 +37,8 @@
 ### 4.- Just clone the repo <a href = "https://github.com/autorope/donkeycar">Donkeycar Python Code</a>
 
 ### 5.- <a href = "https://docs.donkeycar.com/guide/create_application/">Create your car application</a>
+
+In the image downloaded from Docker Hub, there were 3 cars already created.<br />
 
 * Steps:
 
