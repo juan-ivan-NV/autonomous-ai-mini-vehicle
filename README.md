@@ -28,17 +28,23 @@
 
 * Or with <a href = "https://medium.com/robocar-store/how-to-install-a-virtual-donkey-car-on-your-pc-using-docker-9e4e4fcf718a">docker</a> (For this project a docker image from docker-hub is used)
 
+
 ### 2.- Install Donkey Simulator for <a href = "https://youtu.be/J6Ll5Obtuxk">linux</a> or <a href = "https://youtu.be/wqQMmHVT8qw">windows</a>
 
 * To use docker with donkey simulator run the <code>donkey_sim.exe</code> app, then access to any car container, for example <code>Docker exec -it donkeycar1 bash</code> and finally run <code>python manage.py drive</code>
 
+
 ### 3.- Install Donkeycar software on your developer board, in this case <a href = "https://docs.donkeycar.com/guide/robot_sbc/setup_jetson_nano/">Jetson Nano</a>
 
+
 ### 4.- Just clone the repo <a href = "https://github.com/autorope/donkeycar">Donkeycar Python Code</a>
+
 
 ### 5.- <a href = "https://docs.donkeycar.com/guide/create_application/">Create your car application</a>
 
 In the image downloaded from Docker Hub, there were 3 cars already created.<br />
+
+Note: "Nano editor may not be installed so please install it."<br />
 
 * Steps:
 
@@ -50,7 +56,7 @@ In the image downloaded from Docker Hub, there were 3 cars already created.<br /
         
         short:$ nano ~/mycar/myconfig.py
 
-    Configure I2C PCA9685
+    Configure I2C PCA9685 (sombrero board)
 
         sudo usermod -aG i2c $USER
         sudo reboot
@@ -62,20 +68,22 @@ In the image downloaded from Docker Hub, there were 3 cars already created.<br /
 
     Configure the Sony IMX219 cam
 
+
 ### 6.- <a href = "https://docs.donkeycar.com/guide/calibrate/">Calibrate the car</a>
         
         cd ~/mycar
         python manage.py drive
 
-    Dirve the car and calibrate the throttle and steering by editing the <code>myconfig.py</code> file 
+Dirve the car and calibrate the throttle and steering (STEERING_LEFT_PWM, STEERING_RIGHT_PWM) values by editing them in <code>myconfig.py</code> file, "make sure the car goes perfectly straight when no steering input is applied".
+
 
 ### 7.- Drive your car and start recording
 
-Driving with the keyboard 
+Driving with the keyboard. <br />
 
-    run <code>python manage.py drive</code>
+Run <code>python manage.py drive</code>
 
-open the donkey UI in donkey <code>http://127.0.0.1:8887/drive</code> in your PC <code>http://192.168.2.103:8887/drive</code> (IP address can change dependyng on the network).
+Open the donkey UI in donkey <code>http://127.0.0.1:8887/drive</code> in your PC <code>http://192.168.2.103:8887/drive</code> (IP address can change dependyng on the network).
 
 <code>space</code> : stop car and stop recording. <br />
 <code>r</code> : toggle recording. <br />
@@ -90,12 +98,12 @@ Instructions at this <a href = "https://www.roboticsbuildlog.com/hardware/xbox-o
 
 Important change: <br />
     * <code>sudo nano /etc/sysfs.conf</code><br />
-    Append this to the end of the config
+    Append this to the end of the config.<br />
     * <code>/module/bluetooth/parameters/disable_ertm=1</code><br />
-    Reboot the computer
+    Reboot the computer (developer board).<br />
     * <code>sudo reboot</code>
 
-to drive with the joystick run <code>python manage.py drive --js</code> <br />
+To drive with the joystick run <code>python manage.py drive --js</code> <br />
 
 or <br />
 
@@ -104,9 +112,9 @@ go to <code>nano myconfig.py</code> and set <code>USE_JOYSTICK_AS_DEFAULT = True
 
 ### 8.- Train an autopilot(model) with keras
 
-* Supervised learning also referred to as behavioral cloning
+* Supervised learning also referred as behavioral cloning
 
-Use <a href = "https://docs.donkeycar.com/guide/train_autopilot/">Keras</a> to train a neural network to drive like you
+Use <a href = "https://docs.donkeycar.com/guide/train_autopilot/">Keras</a> to train a neural network to drive like you.
 
 Examples:
 
@@ -127,13 +135,15 @@ Run <code>donkey train --tub <tub folder names comma separated> --model ./models
 
 ### 9.- Self driving donkey using the model
 
-Transfer the trained model back to the car
+Transfer the trained model back to the car.
 
-<code>rsync -rv --progress --partial ~/mycar/models/ pi@<your_ip_address>:~/mycar/models/<code>
+<code>rsync -rv --progress --partial ~/mycar/models/model4.h5 hawkbot@192.168.100.28:~/mycar/models/<code>
+
+Transfer config file.
 
 <code>rsync -rv --progress --partial ~/mycar/config.py hawkbot@:~/mycar/config.py</code>
 
-Start your car again and pass it your model to drive
+Start your car again and pass it your model to drive.
 
 <code>python manage.py drive --model ~/mycar/models/mypilot.h5</code>
 
@@ -142,6 +152,8 @@ In this case <code>python manage.py drive --model ~/mycar/models/model4.h5</code
 Better performance is achieved with tflite mode.
 
 <code>python manage.py drive --model ~/mycar/models/mypilot.tflite --type tflite_linear</code>
+
+
 
 #### Note:
 
@@ -157,14 +169,14 @@ While running the autopilot in the nano, it is important to close any app or unn
 
 <h3>Options ...</h3>
 
-## 1.- SSH to the donkey
+## A) SSH to the donkey
 
 Instructions from <a href = "https://docs.donkeycar.com/guide/robot_sbc/setup_raspberry_pi/#step-5-connecting-to-the-pi">donkey site</a>.
 
 
 <code>ssh pi@raspberrypi.local</code> or <code>ssh pi@<your pi ip address></code>
 
-## 2.- Install <a href = "https://www.putty.org/">putty (for windows)</a>
+## B) Install <a href = "https://www.putty.org/">putty (for windows)</a>
 
 Open putty and type the jetson IP addres, when ask for login itroduce <code>hawkbot</code>(in this case) and the password.
 
@@ -207,7 +219,6 @@ When trying to coonect SSh there were a lot of issues at the end Putty for windo
 
 Mistake at connecting the sombrero (PCA9685) board
 Be sure to have the connection set up like this
-
 
 <center>
 <img src='images/sombrero.png'/>
