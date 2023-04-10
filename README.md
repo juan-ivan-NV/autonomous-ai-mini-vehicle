@@ -154,6 +154,11 @@ Better performance is achieved with tflite mode.
 <code>python manage.py drive --model ~/mycar/models/mypilot.tflite --type tflite_linear</code>
 
 
+When app ui is ready go to <code><nano_ip_address_on _the_network>/drive</code>
+
+Example <code>http://192.168.100.55:8887/drive</code>
+
+Select the appropriate driving mode.
 
 #### Note:
 
